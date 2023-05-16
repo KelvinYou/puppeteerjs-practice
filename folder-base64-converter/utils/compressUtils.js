@@ -72,10 +72,31 @@ function decodeBase64ToZip(jsonPath, zipFilePath) {
   });
 }
 
+const waitForFile = (filePath, timeout) => {
+  return new Promise((resolve, reject) => {
+    let elapsedTime = 0;
+    const interval = 100;
+
+    const checkFile = setInterval(() => {
+      fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (!err) {
+          clearInterval(checkFile);
+          resolve();
+        } else if (elapsedTime >= timeout) {
+          clearInterval(checkFile);
+          reject(new Error(`Timeout exceeded while waiting for file: ${filePath}`));
+        } else {
+          elapsedTime += interval;
+        }
+      });
+    }, interval);
+  });
+};
 
 module.exports = {
   compressFolderToZip,
   decompressZipToFolder,
   encodeZipToBase64,
-  decodeBase64ToZip
+  decodeBase64ToZip,
+  waitForFile
 };

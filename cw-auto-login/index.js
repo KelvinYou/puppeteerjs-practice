@@ -7,21 +7,21 @@ const passwordInput = "#oDivDefine2 > div > div.menuContenttop > table > tbody >
 const signInBtn = "#oDivDefine2 > div > div.menuContenttop > table > tbody > tr:nth-child(3) > td:nth-child(2) > div > a:nth-child(1) > img";
 
 (async () => {
-  // const browser = await puppeteer.launch({
-  //   headless: false,
-  //   ignoreDefaultArgs: [
-  //       "--mute-audio",
-  //   ],
-  //   args: [
-  //       "--deny-permission-prompts",
-  //       "--autoplay-policy=no-user-gesture-required",
-  //   ]
-  // });
-  // let pages = await browser.pages();
-  // let page = pages[0];
+  const browser = await puppeteer.launch({
+    headless: false,
+    ignoreDefaultArgs: [
+        "--mute-audio",
+    ],
+    args: [
+        "--deny-permission-prompts",
+        "--autoplay-policy=no-user-gesture-required",
+    ]
+  });
+  let pages = await browser.pages();
+  let page = pages[0];
 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  // const browser = await puppeteer.launch();
+  // const page = await browser.newPage();
   
   await Promise.all([
     page.goto("http://localhost:4002/cb/local/coral/index.html"),
@@ -45,6 +45,6 @@ const signInBtn = "#oDivDefine2 > div > div.menuContenttop > table > tbody > tr:
     page.waitForNavigation({waitUntil: ["domcontentloaded", "networkidle2"]})
   ]);
 
-  await page.screenshot({path: 'coralwork2.png'})
-  await browser.close();
+  // await page.screenshot({path: 'coralwork2.png'})
+  // await browser.close();
 })();
