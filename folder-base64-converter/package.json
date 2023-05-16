@@ -1,4 +1,5 @@
 {
+  "version": "0.0.0",
   "dependencies": {
     "archiver": "^5.3.1",
     "decompress": "^4.2.1",
