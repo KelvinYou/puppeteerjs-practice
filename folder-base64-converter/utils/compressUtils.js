@@ -38,78 +38,44 @@ function decompressZipToFolder(zipFilePath, folderPath) {
   return decompress(zipFilePath, folderPath);
 }
 
-function compressFolderToBase64(folderPath, jsonPath) {
-  return new Promise((resolve, reject) => {
-    const zipFilePath = path.join(folderPath, 'archive.zip');
-    const output = fs.createWriteStream(zipFilePath);
-    const archive = archiver('zip', {
-      zlib: { level: 9 } // Set compression level (optional)
-    });
+function encodeZipToBase64(zipFilePath, jsonPath) {
 
-    archive.on('error', reject);
-    archive.on('end', () => {
-      fs.readFile(zipFilePath, (err, data) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        const base64String = data.toString('base64');
-        const json = {
-          filename: 'archive.zip',
-          data: base64String
-        };
-        fs.writeFile(jsonPath, JSON.stringify(json), (error) => {
-          if (error) {
-            reject(error);
-            return;
-          }
-          // Delete the temporary zip file
-          fs.unlink(zipFilePath, (unlinkError) => {
-            if (unlinkError) {
-              console.warn('Failed to delete the temporary zip file:', unlinkError);
-            }
-            resolve(json);
-          });
-        });
-      });
-    });
 
-    archive.pipe(output);
-    archive.directory(folderPath, false);
-    archive.finalize();
-  });
-}
+  fs.readFile(zipFilePath, (err, data) => {
+    if (err) throw err;
 
-function decompressBase64ToFolder(jsonPath, outputFolderPath) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(jsonPath, 'utf8', (err, data) => {
-      if (err) {
-        reject(err);
-        return;
-      }
+    const base64Data = Buffer.from(data).toString('base64');
+    const jsonContent = { base64Data };
 
-      try {
-        const json = JSON.parse(data);
-        const zipData = Buffer.from(json.data, 'base64');
-        const zipFilePath = path.join(outputFolderPath, json.filename);
-        fs.writeFile(zipFilePath, zipData, (error) => {
-          if (error) {
-            reject(error);
-            return;
-          }
-
-          resolve(zipFilePath);
-        });
-      } catch (parseError) {
-        reject(parseError);
-      }
+    fs.writeFile(jsonPath, JSON.stringify(jsonContent), (err) => {
+      if (err) throw err;
+      console.log('Zip file encoded and stored in JSON successfully.');
     });
   });
 }
+
+function decodeBase64ToZip(jsonPath, zipFilePath) {
+  fs.readFile(jsonPath, 'utf8', (err, data) => {
+    if (err) throw err;
+
+    const jsonContent = JSON.parse(data);
+    const base64Data = jsonContent.base64Data;
+
+    // Decode the Base64 data to a buffer
+    const zipBuffer = Buffer.from(base64Data, 'base64');
+
+    // Write the buffer data to a ZIP file
+    fs.writeFile(zipFilePath, zipBuffer, (err) => {
+      if (err) throw err;
+      console.log('ZIP file decoded and stored successfully.');
+    });
+  });
+}
+
 
 module.exports = {
   compressFolderToZip,
   decompressZipToFolder,
-  compressFolderToBase64,
-  decompressBase64ToFolder
+  encodeZipToBase64,
+  decodeBase64ToZip
 };
