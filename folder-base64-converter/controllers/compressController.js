@@ -9,7 +9,7 @@ const {
   waitForFile
 } = require('../utils/compressUtils');
 
-const folderPath = 'src/images';
+const folderPath = 'src/store';
 const zipFilePath = 'src/archive.zip';
 const jsonPath = "src/archieve.json";
 

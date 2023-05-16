@@ -10,7 +10,7 @@ router.get('/decompress', compressController.decompress);
 router.get('/encodeBase64', compressController.encodeBase64);
 router.get('/decodeBase64', compressController.decodeBase64);
 
-router.get('/folderToBase64', compressController.folderToBase64);
-router.get('/base64ToFolder', compressController.base64ToFolder);
+router.post('/folderToBase64', compressController.folderToBase64);
+router.post('/base64ToFolder', compressController.base64ToFolder);
 
 module.exports = router;
