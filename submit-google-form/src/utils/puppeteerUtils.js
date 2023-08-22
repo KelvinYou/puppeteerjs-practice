@@ -2,20 +2,26 @@ const puppeteer = require('puppeteer');
 
 const launchBrowserWithOptions = async _ => {
   return puppeteer.launch({
-    // headless: false,
-    // ignoreDefaultArgs: [
-    //   "--mute-audio",
-    // ],
-    // args: [
-    //   "--deny-permission-prompts",
-    //   "--autoplay-policy=no-user-gesture-required",
-    // ]
+    headless: false,
+    ignoreDefaultArgs: [
+      "--mute-audio",
+    ],
+    args: [
+      "--deny-permission-prompts",
+      "--autoplay-policy=no-user-gesture-required",
+    ]
   });
 }
 
 const openPage = async (browser, url) => {
   const pages = await browser.pages();
   const page = pages[0];
+  await page.goto(url);
+  return page;
+}
+
+const openPageInNewTab = async (browser, url) => {
+  const page = await browser.newPage();
   await page.goto(url);
   return page;
 }
@@ -62,6 +68,7 @@ const clickButton = async (page, btnSelector) => {
 module.exports = {
   launchBrowserWithOptions,
   openPage,
+  openPageInNewTab,
   randomClickRadio,
   randomSelectCheckboxes,
   typeText,

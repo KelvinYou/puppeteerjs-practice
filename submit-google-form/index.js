@@ -26,32 +26,22 @@ const checkBoxes = [checkBox1, checkBox2, checkBox3];
 
 const submitButton = "#mG61Hd > div.RH5hzf.RLS9Fe > div > div.ThHDze > div.DE3NNc.CekdCb > div.lRwqcd > div > span";
 
-main = async () => {
-  const browser = await launchBrowserWithOptions();
+const fillOutForm = async (page) => {
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: ["domcontentloaded", "networkidle0"] }),
+  ]);
 
-  while(true) {
-    const page = await openPage(browser, FORM_URL);
-  
-    await Promise.all([
-      page.waitForNavigation({ waitUntil: ["domcontentloaded", "networkidle0"] }),
-    ]);
-  
-    await randomClickRadio(page, RADIO_SELECTORS);
-  
-    await typeText(
-      page, 
-      textField1, 
-      "Steve, John, Kelvin"
-    );
-    
-    await randomSelectCheckboxes(page, checkBoxes);
-  
-    await clickButton(page, submitButton);
-  }
+  await randomClickRadio(page, RADIO_SELECTORS);
 
+  await typeText(
+    page, 
+    textField1, 
+    "Steve, John, Kelvin"
+  );
+  
+  await randomSelectCheckboxes(page, checkBoxes);
 
-  // Don't forget to close the browser when you're done
-  // await browser.close();
+  await clickButton(page, submitButton);
 };
 
 (() => {
@@ -59,3 +49,14 @@ main = async () => {
     main()
   }
 })();
+
+async function main() {
+  const browser = await launchBrowserWithOptions();
+
+  while (true) {
+    const page = await openPage(browser, FORM_URL);
+    await fillOutForm(page);
+  }
+
+  // await browser.close();
+}
