@@ -15,12 +15,20 @@ function searchFilesByLine(filePaths, searchQuery, searchTime) {
     let fileCount = 0;
 
     rl.on('line', (line) => {
+
+
       if (line.includes(searchQuery)) {
+
         const timestamp = extractTimestamp(line);
         if (timestamp && isAfterTime(timestamp, searchTime)) {
           // console.log(line); // or perform any desired action with the matching line
           totalCount++;
           fileCount++;
+
+          console.log("COUNT (" + totalCount + "): " + line);
+        } else {
+          console.log(line);
+
         }
       }
     });
@@ -57,15 +65,15 @@ function isAfterTime(timestamp, searchTime) {
 }
 
 // Usage example
-const searchDate = '2023-05-17';
+const searchDate = '2023-04-24';
 const searchTime = '23:50:00';
 const baseFilePath = 'C:/Users/User/Downloads/logs/logs/logs/MQPOSPAYMENT.';
 
 const filePaths = [
-  `${baseFilePath}${searchDate}.0`,
-  `${baseFilePath}${searchDate}.1`
+  `${baseFilePath}${searchDate}.1`,
+  `${baseFilePath}${searchDate}.0`
 ];
 
-const searchQuery = 'Start settlement mid=';
+const searchQuery = 'Start settlement';
 
 searchFilesByLine(filePaths, searchQuery, searchTime);
