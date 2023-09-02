@@ -16,6 +16,10 @@
     "phoneName": "Huawei Mate 20 Pro"
   },
   {
+    "phoneId": "9513",
+    "phoneName": "Xiaomi Redmi Note 7"
+  },
+  {
     "phoneId": "9530",
     "phoneName": "Huawei P30"
   },
@@ -48,6 +52,14 @@
     "phoneName": "Huawei nova 5T"
   },
   {
+    "phoneId": "9812",
+    "phoneName": "Xiaomi Redmi Note 8 Pro"
+  },
+  {
+    "phoneId": "9814",
+    "phoneName": "Xiaomi Redmi Note 8"
+  },
+  {
     "phoneId": "10058",
     "phoneName": "Huawei nova 7i"
   },
@@ -56,24 +68,76 @@
     "phoneName": "Huawei P40 Pro"
   },
   {
+    "phoneId": "10192",
+    "phoneName": "Xiaomi Redmi Note 9"
+  },
+  {
+    "phoneId": "10217",
+    "phoneName": "Xiaomi Redmi Note 9 Pro"
+  },
+  {
     "phoneId": "10222",
     "phoneName": "Huawei Y6p"
+  },
+  {
+    "phoneId": "10233",
+    "phoneName": "Xiaomi Redmi 9"
+  },
+  {
+    "phoneId": "10247",
+    "phoneName": "Xiaomi Redmi Note 10"
+  },
+  {
+    "phoneId": "10279",
+    "phoneName": "Xiaomi Redmi 9A"
   },
   {
     "phoneId": "10528",
     "phoneName": "Huawei Mate 40 Pro"
   },
   {
+    "phoneId": "10662",
+    "phoneName": "Xiaomi Redmi Note 10 Pro"
+  },
+  {
+    "phoneId": "10769",
+    "phoneName": "Xiaomi Redmi Note 10S"
+  },
+  {
     "phoneId": "11029",
     "phoneName": "Huawei P50 Pro"
+  },
+  {
+    "phoneId": "11060",
+    "phoneName": "Xiaomi Redmi 10"
   },
   {
     "phoneId": "11121",
     "phoneName": "Huawei nova 9"
   },
   {
+    "phoneId": "11333",
+    "phoneName": "Xiaomi Redmi Note 11 Pro 5G"
+  },
+  {
+    "phoneId": "11334",
+    "phoneName": "Xiaomi Redmi Note 11 Pro"
+  },
+  {
+    "phoneId": "11336",
+    "phoneName": "Xiaomi Redmi Note 11"
+  },
+  {
     "phoneId": "11399",
     "phoneName": "Huawei nova 9 SE"
+  },
+  {
+    "phoneId": "11418",
+    "phoneName": "Xiaomi Redmi 10C"
+  },
+  {
+    "phoneId": "11449",
+    "phoneName": "Xiaomi Redmi 10A"
   },
   {
     "phoneId": "11773",
@@ -104,16 +168,56 @@
     "phoneName": "Huawei nova 10 SE"
   },
   {
+    "phoneId": "11954",
+    "phoneName": "Xiaomi Redmi Note 12 Pro+"
+  },
+  {
+    "phoneId": "11955",
+    "phoneName": "Xiaomi Redmi Note 12 Pro"
+  },
+  {
     "phoneId": "11968",
     "phoneName": "Huawei nova Y61"
+  },
+  {
+    "phoneId": "12051",
+    "phoneName": "Xiaomi Redmi 12C"
+  },
+  {
+    "phoneId": "12063",
+    "phoneName": "Xiaomi Redmi Note 12"
+  },
+  {
+    "phoneId": "12124",
+    "phoneName": "Xiaomi Redmi A2"
   },
   {
     "phoneId": "12172",
     "phoneName": "Huawei P60 Pro"
   },
   {
+    "phoneId": "12181",
+    "phoneName": "Xiaomi Redmi Note 12 Turbo"
+  },
+  {
     "phoneId": "12186",
     "phoneName": "Huawei Mate X3"
+  },
+  {
+    "phoneId": "12188",
+    "phoneName": "Xiaomi Redmi Note 12 4G"
+  },
+  {
+    "phoneId": "12197",
+    "phoneName": "Xiaomi Redmi A2+"
+  },
+  {
+    "phoneId": "12209",
+    "phoneName": "Xiaomi Redmi Note 12 Pro 4G"
+  },
+  {
+    "phoneId": "12218",
+    "phoneName": "Xiaomi Redmi Note 12S"
   },
   {
     "phoneId": "12233",
@@ -128,8 +232,24 @@
     "phoneName": "Huawei nova Y91"
   },
   {
+    "phoneId": "12328",
+    "phoneName": "Xiaomi Redmi 12"
+  },
+  {
     "phoneId": "12420",
     "phoneName": "Huawei MatePad 11.5"
+  },
+  {
+    "phoneId": "12446",
+    "phoneName": "Xiaomi Redmi 12 5G"
+  },
+  {
+    "phoneId": "12466",
+    "phoneName": "Xiaomi Redmi Pad SE"
+  },
+  {
+    "phoneId": "12470",
+    "phoneName": "Xiaomi Redmi K60 Ultra"
   },
   {
     "phoneId": "12530",

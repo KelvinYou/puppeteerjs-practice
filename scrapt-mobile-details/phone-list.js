@@ -9,11 +9,12 @@ const {
 
 const fs = require('fs-extra');
 const path = require('path');
+const { PHONE_LIST_PATH } = require('./src/constants/routes');
 
 (async () => {
   const browser = await launchBrowserWithOptions();
   const page = await openPage(browser, "https://www.gsmarena.com/compare.php3");
-  const searchTerm = "iphone 14";
+  const searchTerm = "redmi";
   await typeText(
     page, 
     '#sSearch1',
@@ -51,7 +52,7 @@ const path = require('path');
 
   console.log("phoneList: ", phoneList)
 
-  const filePath = path.join(__dirname, 'src/data/phoneList.json');
+  const filePath = path.join(__dirname, PHONE_LIST_PATH);
 
   let existingData = [];
   // Check if the JSON file already exists
@@ -87,5 +88,5 @@ const path = require('path');
   // Write the updated data back to the JSON file
   fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
 
-  console.log('Data saved to src/data/phoneList.json');
+  console.log(`Data saved to ${PHONE_LIST_PATH}`);
 })();
