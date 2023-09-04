@@ -1,0 +1,125 @@
+{
+  "modifiedDate": "04-09-2023 10:52:12",
+  "phoneList": [
+    {
+      "phoneId": "9801",
+      "phoneName": "Realme 5 Pro"
+    },
+    {
+      "phoneId": "10010",
+      "phoneName": "Realme 5i"
+    },
+    {
+      "phoneId": "10113",
+      "phoneName": "Realme 6"
+    },
+    {
+      "phoneId": "10308",
+      "phoneName": "Realme C11"
+    },
+    {
+      "phoneId": "10809",
+      "phoneName": "Realme 8 Pro"
+    },
+    {
+      "phoneId": "10810",
+      "phoneName": "Realme 8"
+    },
+    {
+      "phoneId": "11001",
+      "phoneName": "Realme GT Master"
+    },
+    {
+      "phoneId": "11259",
+      "phoneName": "Realme 9i"
+    },
+    {
+      "phoneId": "11317",
+      "phoneName": "Realme 9 Pro"
+    },
+    {
+      "phoneId": "11327",
+      "phoneName": "Realme 9 Pro+"
+    },
+    {
+      "phoneId": "11353",
+      "phoneName": "Realme C35"
+    },
+    {
+      "phoneId": "11377",
+      "phoneName": "Realme Narzo 50"
+    },
+    {
+      "phoneId": "11436",
+      "phoneName": "Realme GT Neo 3"
+    },
+    {
+      "phoneId": "11465",
+      "phoneName": "Realme 9"
+    },
+    {
+      "phoneId": "11849",
+      "phoneName": "Realme C33"
+    },
+    {
+      "phoneId": "11950",
+      "phoneName": "Realme 10"
+    },
+    {
+      "phoneId": "11952",
+      "phoneName": "Realme 10 Pro+"
+    },
+    {
+      "phoneId": "11978",
+      "phoneName": "Realme 10 Pro"
+    },
+    {
+      "phoneId": "12066",
+      "phoneName": "Realme GT Neo 5"
+    },
+    {
+      "phoneId": "12120",
+      "phoneName": "Realme GT3"
+    },
+    {
+      "phoneId": "12159",
+      "phoneName": "Realme C55"
+    },
+    {
+      "phoneId": "12246",
+      "phoneName": "Realme 11 Pro+"
+    },
+    {
+      "phoneId": "12261",
+      "phoneName": "Realme 11 Pro"
+    },
+    {
+      "phoneId": "12262",
+      "phoneName": "Realme 11"
+    },
+    {
+      "phoneId": "12310",
+      "phoneName": "Realme C53"
+    },
+    {
+      "phoneId": "12444",
+      "phoneName": "Realme 11 5G"
+    },
+    {
+      "phoneId": "12519",
+      "phoneName": "Realme 11x"
+    },
+    {
+      "phoneId": "12527",
+      "phoneName": "Realme C51"
+    },
+    {
+      "phoneId": "12528",
+      "phoneName": "Realme GT5"
+    },
+    {
+      "phoneId": "12529",
+      "phoneName": "Realme GT5 240W"
+    }
+  ]
+}

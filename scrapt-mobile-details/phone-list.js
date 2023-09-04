@@ -14,14 +14,14 @@ const { PHONE_LIST_PATH } = require('./src/constants/routes');
 (async () => {
   const browser = await launchBrowserWithOptions();
   const page = await openPage(browser, "https://www.gsmarena.com/compare.php3");
-  const searchTerm = "redmi";
+  const searchTerm = "realme";
   await typeText(
     page, 
     '#sSearch1',
     searchTerm
   );
   await clickButton(page, '#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > form > input.button.button-small');
-  await page.waitForNavigation(); // Wait for the navigation to complete
+  await page.waitForSelector("#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > ul");
   const phoneList = await page.$eval(
     "#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > ul",
     (ul) => {
@@ -85,8 +85,19 @@ const { PHONE_LIST_PATH } = require('./src/constants/routes');
     return idA - idB;
   });
 
+  const currentDate = new Date(); 
+  const formattedDateTime = currentDate.getDate().toString().padStart(2, '0') + "-"
+                            + (currentDate.getMonth()+1).toString().padStart(2, '0')  + "-" 
+                            + currentDate.getFullYear() + " "  
+                            + currentDate.getHours().toString().padStart(2, '0') + ":"  
+                            + currentDate.getMinutes().toString().padStart(2, '0') + ":" 
+                            + currentDate.getSeconds().toString().padStart(2, '0');
+
   // Write the updated data back to the JSON file
-  fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
+  fs.writeFileSync(filePath, JSON.stringify({
+    modifiedDate: formattedDateTime,
+    phoneList: existingData
+  }, null, 2));
 
   console.log(`Data saved to ${PHONE_LIST_PATH}`);
 })();

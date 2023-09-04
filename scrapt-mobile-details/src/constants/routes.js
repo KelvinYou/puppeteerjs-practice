@@ -1,4 +1,4 @@
-const PHONE_LIST_PATH = "src/data/phoneList.json";
+const PHONE_LIST_PATH = "src/data/data.json";
 
 
 module.exports = {
