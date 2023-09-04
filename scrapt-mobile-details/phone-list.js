@@ -10,11 +10,12 @@ const {
 const fs = require('fs-extra');
 const path = require('path');
 const { PHONE_LIST_PATH } = require('./src/constants/routes');
+const { todayDateTime } = require('./src/utils/dateUtils');
 
 (async () => {
   const browser = await launchBrowserWithOptions();
   const page = await openPage(browser, "https://www.gsmarena.com/compare.php3");
-  const searchTerm = "realme";
+  const searchTerm = "oneplus";
   await typeText(
     page, 
     '#sSearch1',
@@ -58,7 +59,7 @@ const { PHONE_LIST_PATH } = require('./src/constants/routes');
   // Check if the JSON file already exists
   if (fs.existsSync(filePath)) {
     // Read the existing JSON data from the file
-    existingData = JSON.parse(fs.readFileSync(filePath));
+    existingData = JSON.parse(fs.readFileSync(filePath)).phoneList;
     
     // Update or add entries based on phoneId
     phoneList.forEach((newEntry) => {
@@ -85,17 +86,11 @@ const { PHONE_LIST_PATH } = require('./src/constants/routes');
     return idA - idB;
   });
 
-  const currentDate = new Date(); 
-  const formattedDateTime = currentDate.getDate().toString().padStart(2, '0') + "-"
-                            + (currentDate.getMonth()+1).toString().padStart(2, '0')  + "-" 
-                            + currentDate.getFullYear() + " "  
-                            + currentDate.getHours().toString().padStart(2, '0') + ":"  
-                            + currentDate.getMinutes().toString().padStart(2, '0') + ":" 
-                            + currentDate.getSeconds().toString().padStart(2, '0');
+  const modifiedDate = todayDateTime();
 
   // Write the updated data back to the JSON file
   fs.writeFileSync(filePath, JSON.stringify({
-    modifiedDate: formattedDateTime,
+    modifiedDate,
     phoneList: existingData
   }, null, 2));
 

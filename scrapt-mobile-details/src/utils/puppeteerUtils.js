@@ -65,6 +65,12 @@ const clickButton = async (page, btnSelector) => {
   await page.click(btnSelector);
 }
 
+const getTextContext = async (page, selector) => {
+  const f = await page.$(selector)
+  const text = await (await f.getProperty('textContent')).jsonValue()
+  return text;
+}
+
 module.exports = {
   launchBrowserWithOptions,
   openPage,
@@ -73,4 +79,5 @@ module.exports = {
   randomSelectCheckboxes,
   typeText,
   clickButton,
+  getTextContext,
 };
