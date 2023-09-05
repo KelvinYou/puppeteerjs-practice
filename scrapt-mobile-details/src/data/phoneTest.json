@@ -1,4 +1,10 @@
 {
-  "phoneId": "11738",
-  "phoneName": "OnePlus Nord N20 SE",
+  "phoneId": "12519",
+  "phoneName": "Realme 11x",
+  "platform": {
+    "os": "Android 13, Realme UI 4.0",
+    "chipset": "Mediatek Dimensity 6100+ (6 nm)",
+    "cpu": "Octa-core (2x2.2 GHz Cortex-A76 & 6x2.0 GHz Cortex-A55)",
+    "gpu": "Mali-G57 MC2"
+  }
 }

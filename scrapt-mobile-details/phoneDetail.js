@@ -36,7 +36,17 @@ const getPhoneDetail = (filePath) => {
   const page = await openPage(browser, gsmLink);
 
   const osSelector = "#specs-list > table:nth-child(6) > tbody > tr:nth-child(1) > td.nfo";
-  console.log("Text is: " + await getTextContext(page, osSelector))
+  const chipsetSelector = "#specs-list > table:nth-child(6) > tbody > tr:nth-child(2) > td.nfo";
+  const cpuSelector = "#specs-list > table:nth-child(6) > tbody > tr:nth-child(3) > td.nfo";
+  const gpuSelector = "#specs-list > table:nth-child(6) > tbody > tr:nth-child(4) > td.nfo";
+
+  const platform = {
+    "os": await getTextContext(page, osSelector),
+    "chipset": await getTextContext(page, chipsetSelector),
+    "cpu": await getTextContext(page, cpuSelector),
+    "gpu": await getTextContext(page, gpuSelector),
+  }
+
 
   await browser.close();
 
@@ -44,7 +54,7 @@ const getPhoneDetail = (filePath) => {
   fs.writeFileSync(filePath, JSON.stringify({
     phoneId,
     phoneName,
-    "hehe": "hehe"
+    platform
   }, null, 2));
 
   console.log(`Data saved to ${PHONE_DETAIL_PATH}`);

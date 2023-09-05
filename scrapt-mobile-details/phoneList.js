@@ -13,8 +13,15 @@ const { PHONE_LIST_PATH } = require('./src/constants/routes');
 const { todayDateTime } = require('./src/utils/dateUtils');
 
 (async () => {
-  const browser = await launchBrowserWithOptions();
-  const page = await openPage(browser, "https://www.gsmarena.com/compare.php3");
+  const link = "https://www.gsmarena.com/compare.php3";
+  const browser = await launchBrowserWithOptions(false);
+  const page = await openPage(browser, link);
+
+  const modifiedDate = todayDateTime();
+
+
+  console.log(`Visiting ${link}`)
+
   const searchTerm = "oneplus";
   await typeText(
     page, 
@@ -23,10 +30,10 @@ const { todayDateTime } = require('./src/utils/dateUtils');
   );
   await clickButton(page, '#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > form > input.button.button-small');
   await page.waitForSelector("#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > ul");
-  const phoneList = await page.$eval(
+  const phones = await page.$eval(
     "#body > header > div:nth-child(1) > div.candidate-search.candidate-search-1 > ul",
     (ul) => {
-        const phoneList = [];
+        const phones = [];
         for (let i = 0; i < ul.children.length; i++) {
           const phoneInnerHtml = ul.children[i].innerHTML;
 
@@ -37,21 +44,22 @@ const { todayDateTime } = require('./src/utils/dateUtils');
             const phoneId = match[1];
             const phoneName = ul.children[i].textContent;
 
-            phoneList.push({ 
+
+            phones.push({ 
               phoneId,
-              phoneName
+              phoneName,
             });
           } else {
             console.log('idPhone1 not found in the HTML string.');
           }
         }
 
-        return phoneList;
+        return phones;
     }
   );
   await browser.close();
 
-  console.log("phoneList: ", phoneList)
+  console.log("phones: ", phones)
 
   const filePath = path.join(__dirname, PHONE_LIST_PATH);
 
@@ -59,10 +67,10 @@ const { todayDateTime } = require('./src/utils/dateUtils');
   // Check if the JSON file already exists
   if (fs.existsSync(filePath)) {
     // Read the existing JSON data from the file
-    existingData = JSON.parse(fs.readFileSync(filePath)).phoneList;
+    existingData = JSON.parse(fs.readFileSync(filePath)).phones;
     
     // Update or add entries based on phoneId
-    phoneList.forEach((newEntry) => {
+    phones.forEach((newEntry) => {
       const existingEntryIndex = existingData.findIndex((entry) => entry.phoneId === newEntry.phoneId);
       if (existingEntryIndex !== -1) {
         // If an entry with the same phoneId exists, update it with the new data
@@ -74,7 +82,7 @@ const { todayDateTime } = require('./src/utils/dateUtils');
     });
   } else {
     // If the JSON file doesn't exist, use the scraped data as is
-    existingData = phoneList;
+    existingData = phones;
   }
 
   // Sort the existingData array by phoneId (id property) in ascending order
@@ -86,12 +94,11 @@ const { todayDateTime } = require('./src/utils/dateUtils');
     return idA - idB;
   });
 
-  const modifiedDate = todayDateTime();
 
   // Write the updated data back to the JSON file
   fs.writeFileSync(filePath, JSON.stringify({
     modifiedDate,
-    phoneList: existingData
+    phones: existingData
   }, null, 2));
 
   console.log(`Data saved to ${PHONE_LIST_PATH}`);

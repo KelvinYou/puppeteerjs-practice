@@ -1,0 +1,125 @@
+{
+  "modifiedDate": "05-09-2023 09:17:03",
+  "phones": [
+    {
+      "phoneId": "9109",
+      "phoneName": "OnePlus 6"
+    },
+    {
+      "phoneId": "9350",
+      "phoneName": "OnePlus 6T"
+    },
+    {
+      "phoneId": "9623",
+      "phoneName": "OnePlus 7"
+    },
+    {
+      "phoneId": "9689",
+      "phoneName": "OnePlus 7 Pro"
+    },
+    {
+      "phoneId": "9816",
+      "phoneName": "OnePlus 7T"
+    },
+    {
+      "phoneId": "9919",
+      "phoneName": "OnePlus 8 Pro"
+    },
+    {
+      "phoneId": "10161",
+      "phoneName": "OnePlus 8"
+    },
+    {
+      "phoneId": "10289",
+      "phoneName": "OnePlus Nord"
+    },
+    {
+      "phoneId": "10420",
+      "phoneName": "OnePlus 8T"
+    },
+    {
+      "phoneId": "10556",
+      "phoneName": "OnePlus Nord N10 5G"
+    },
+    {
+      "phoneId": "10747",
+      "phoneName": "OnePlus 9"
+    },
+    {
+      "phoneId": "10806",
+      "phoneName": "OnePlus 9 Pro"
+    },
+    {
+      "phoneId": "10807",
+      "phoneName": "OnePlus 9R"
+    },
+    {
+      "phoneId": "10944",
+      "phoneName": "OnePlus Nord CE 5G"
+    },
+    {
+      "phoneId": "10960",
+      "phoneName": "OnePlus Nord 2 5G"
+    },
+    {
+      "phoneId": "10961",
+      "phoneName": "OnePlus Nord N200 5G"
+    },
+    {
+      "phoneId": "11218",
+      "phoneName": "OnePlus Nord N20 5G"
+    },
+    {
+      "phoneId": "11234",
+      "phoneName": "OnePlus 10 Pro"
+    },
+    {
+      "phoneId": "11269",
+      "phoneName": "OnePlus Nord CE 2 5G"
+    },
+    {
+      "phoneId": "11344",
+      "phoneName": "OnePlus Nord CE 2 Lite 5G"
+    },
+    {
+      "phoneId": "11445",
+      "phoneName": "OnePlus 10R"
+    },
+    {
+      "phoneId": "11517",
+      "phoneName": "OnePlus Nord 2T"
+    },
+    {
+      "phoneId": "11622",
+      "phoneName": "OnePlus 10T"
+    },
+    {
+      "phoneId": "11738",
+      "phoneName": "OnePlus Nord N20 SE"
+    },
+    {
+      "phoneId": "11893",
+      "phoneName": "OnePlus 11"
+    },
+    {
+      "phoneId": "11915",
+      "phoneName": "OnePlus 11R"
+    },
+    {
+      "phoneId": "11977",
+      "phoneName": "OnePlus Nord CE3"
+    },
+    {
+      "phoneId": "12135",
+      "phoneName": "OnePlus Nord 3"
+    },
+    {
+      "phoneId": "12198",
+      "phoneName": "OnePlus Nord CE 3 Lite"
+    },
+    {
+      "phoneId": "12473",
+      "phoneName": "OnePlus Ace 2 Pro"
+    }
+  ]
+}

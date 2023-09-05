@@ -1,16 +1,17 @@
 const puppeteer = require('puppeteer');
 
-const launchBrowserWithOptions = async _ => {
-  return puppeteer.launch({
-    headless: false,
-    ignoreDefaultArgs: [
-      "--mute-audio",
-    ],
-    args: [
-      "--deny-permission-prompts",
-      "--autoplay-policy=no-user-gesture-required",
-    ]
-  });
+const launchBrowserWithOptions = async (headless = true) => {
+
+    return puppeteer.launch({
+      headless,
+      ignoreDefaultArgs: [
+        "--mute-audio",
+      ],
+      args: [
+        "--deny-permission-prompts",
+        "--autoplay-policy=no-user-gesture-required",
+      ]
+    });
 }
 
 const openPage = async (browser, url) => {
