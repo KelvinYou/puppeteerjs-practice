@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const launchBrowserWithOptions = async (headless = true) => {
 
     return puppeteer.launch({
-      headless,
+      headless: headless ? "new" : false,
       ignoreDefaultArgs: [
         "--mute-audio",
       ],

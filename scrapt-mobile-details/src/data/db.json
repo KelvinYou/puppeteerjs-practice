@@ -1,9 +1,61 @@
 {
-  "modifiedDate": "05-09-2023 09:17:03",
+  "modifiedDate": "05-09-2023 12:25:09",
   "phones": [
+    {
+      "phoneId": "5685",
+      "phoneName": "Apple iPhone 5s"
+    },
+    {
+      "phoneId": "6378",
+      "phoneName": "Apple iPhone 6"
+    },
+    {
+      "phoneId": "7242",
+      "phoneName": "Apple iPhone 6s"
+    },
+    {
+      "phoneId": "7243",
+      "phoneName": "Apple iPhone 6s Plus"
+    },
+    {
+      "phoneId": "7969",
+      "phoneName": "Apple iPhone SE"
+    },
+    {
+      "phoneId": "8064",
+      "phoneName": "Apple iPhone 7"
+    },
+    {
+      "phoneId": "8065",
+      "phoneName": "Apple iPhone 7 Plus"
+    },
+    {
+      "phoneId": "8131",
+      "phoneName": "Apple iPhone 8 Plus"
+    },
+    {
+      "phoneId": "8573",
+      "phoneName": "Apple iPhone 8"
+    },
+    {
+      "phoneId": "8858",
+      "phoneName": "Apple iPhone X"
+    },
     {
       "phoneId": "9109",
       "phoneName": "OnePlus 6"
+    },
+    {
+      "phoneId": "9318",
+      "phoneName": "Apple iPhone XS"
+    },
+    {
+      "phoneId": "9319",
+      "phoneName": "Apple iPhone XS Max"
+    },
+    {
+      "phoneId": "9320",
+      "phoneName": "Apple iPhone XR"
     },
     {
       "phoneId": "9350",
@@ -22,6 +74,18 @@
       "phoneName": "OnePlus 7T"
     },
     {
+      "phoneId": "9846",
+      "phoneName": "Apple iPhone 11 Pro Max"
+    },
+    {
+      "phoneId": "9847",
+      "phoneName": "Apple iPhone 11 Pro"
+    },
+    {
+      "phoneId": "9848",
+      "phoneName": "Apple iPhone 11"
+    },
+    {
       "phoneId": "9919",
       "phoneName": "OnePlus 8 Pro"
     },
@@ -30,12 +94,32 @@
       "phoneName": "OnePlus 8"
     },
     {
+      "phoneId": "10170",
+      "phoneName": "Apple iPhone SE (2020)"
+    },
+    {
+      "phoneId": "10237",
+      "phoneName": "Apple iPhone 12 Pro Max"
+    },
+    {
       "phoneId": "10289",
       "phoneName": "OnePlus Nord"
     },
     {
       "phoneId": "10420",
       "phoneName": "OnePlus 8T"
+    },
+    {
+      "phoneId": "10508",
+      "phoneName": "Apple iPhone 12 Pro"
+    },
+    {
+      "phoneId": "10509",
+      "phoneName": "Apple iPhone 12"
+    },
+    {
+      "phoneId": "10510",
+      "phoneName": "Apple iPhone 12 mini"
     },
     {
       "phoneId": "10556",
@@ -66,6 +150,22 @@
       "phoneName": "OnePlus Nord N200 5G"
     },
     {
+      "phoneId": "11089",
+      "phoneName": "Apple iPhone 13 Pro Max"
+    },
+    {
+      "phoneId": "11102",
+      "phoneName": "Apple iPhone 13 Pro"
+    },
+    {
+      "phoneId": "11103",
+      "phoneName": "Apple iPhone 13"
+    },
+    {
+      "phoneId": "11104",
+      "phoneName": "Apple iPhone 13 mini"
+    },
+    {
       "phoneId": "11218",
       "phoneName": "OnePlus Nord N20 5G"
     },
@@ -82,6 +182,10 @@
       "phoneName": "OnePlus Nord CE 2 Lite 5G"
     },
     {
+      "phoneId": "11410",
+      "phoneName": "Apple iPhone SE (2022)"
+    },
+    {
       "phoneId": "11445",
       "phoneName": "OnePlus 10R"
     },
@@ -96,6 +200,22 @@
     {
       "phoneId": "11738",
       "phoneName": "OnePlus Nord N20 SE"
+    },
+    {
+      "phoneId": "11773",
+      "phoneName": "Apple iPhone 14 Pro Max"
+    },
+    {
+      "phoneId": "11860",
+      "phoneName": "Apple iPhone 14 Pro"
+    },
+    {
+      "phoneId": "11861",
+      "phoneName": "Apple iPhone 14"
+    },
+    {
+      "phoneId": "11862",
+      "phoneName": "Apple iPhone 14 Plus"
     },
     {
       "phoneId": "11893",

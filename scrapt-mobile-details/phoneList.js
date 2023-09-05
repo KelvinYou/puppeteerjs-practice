@@ -14,15 +14,12 @@ const { todayDateTime } = require('./src/utils/dateUtils');
 
 (async () => {
   const link = "https://www.gsmarena.com/compare.php3";
-  const browser = await launchBrowserWithOptions(false);
+  const browser = await launchBrowserWithOptions();
   const page = await openPage(browser, link);
-
-  const modifiedDate = todayDateTime();
-
 
   console.log(`Visiting ${link}`)
 
-  const searchTerm = "oneplus";
+  const searchTerm = "iphone";
   await typeText(
     page, 
     '#sSearch1',
@@ -58,8 +55,6 @@ const { todayDateTime } = require('./src/utils/dateUtils');
     }
   );
   await browser.close();
-
-  console.log("phones: ", phones)
 
   const filePath = path.join(__dirname, PHONE_LIST_PATH);
 
@@ -97,7 +92,7 @@ const { todayDateTime } = require('./src/utils/dateUtils');
 
   // Write the updated data back to the JSON file
   fs.writeFileSync(filePath, JSON.stringify({
-    modifiedDate,
+    modifiedDate: todayDateTime(),
     phones: existingData
   }, null, 2));
 
